@@ -6,6 +6,7 @@ const client = new MongoClient(process.env.MONGO_URI);
 const db = client.db('book-friend');
 
 export const auth = betterAuth({
+  baseURL: process.env.BETTER_AUTH_URL, 
   database: mongodbAdapter(db, {
     // Optional: if you don't provide a client, database transactions won't be enabled.
     client
@@ -14,4 +15,11 @@ export const auth = betterAuth({
     enabled: true, 
     autoSignIn: false
   }, 
+
+  socialProviders: {
+        google: { 
+            clientId: process.env.GOOGLE_CLIENT_ID, 
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
+        }, 
+    },
 });

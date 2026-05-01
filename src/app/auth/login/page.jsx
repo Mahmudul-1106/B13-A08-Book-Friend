@@ -7,6 +7,12 @@ import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const LoginPage = () => {
+  const googleSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   const {
     register,
     handleSubmit,
@@ -42,7 +48,10 @@ const LoginPage = () => {
     <div className="container mt-5 py-5 mx-auto min-h-[80vh] flex flex-col items-center bg-slate-100">
       <div>
         {/* Google */}
-        <button className="btn w-[310px] bg-white text-black border-[#e5e5e5] rounded-lg">
+        <button
+          onClick={googleSignIn}
+          className="btn w-[310px] bg-white text-black border-[#e5e5e5] rounded-lg"
+        >
           <svg
             aria-label="Google logo"
             width="16"
