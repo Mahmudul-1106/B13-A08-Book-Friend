@@ -12,22 +12,24 @@
     "@better-auth/mongo-adapter": "^1.6.9",
     "@heroui/react": "^3.0.3",
     "@heroui/styles": "^3.0.3",
+    "@tailwindcss/postcss": "^4.2.4",
     "better-auth": "^1.6.9",
     "mongodb": "^7.2.0",
     "next": "16.2.4",
+    "postcss": "^8.5.13",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-fast-marquee": "^1.6.5",
     "react-hook-form": "^7.74.0",
     "react-hot-toast": "^2.6.0",
-    "react-icons": "^5.6.0"
+    "react-icons": "^5.6.0",
+    "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
     "@gravity-ui/icons": "^2.18.0",
-    "@tailwindcss/postcss": "^4",
     "babel-plugin-react-compiler": "1.0.0",
     "daisyui": "^5.5.19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.4",
-    "tailwindcss": "^4"
+    "eslint-config-next": "16.2.4"
   }
 }

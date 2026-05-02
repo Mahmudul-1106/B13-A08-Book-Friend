@@ -11,7 +11,7 @@ const Navbar = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
   return (
-    <div className="container mx-auto flex justify-between gap-4 mt-6">
+    <div className="container px-2 mx-auto flex items-center flex-col  sm:flex-row justify-between gap-4 mt-6">
       <div>
         <Link href={"/"}>
           <Image src={logo} alt="logo" width={50} height={50}></Image>
@@ -19,38 +19,21 @@ const Navbar = () => {
       </div>
       <ul className="flex justify-between font-semibold items-center text-gray-700 gap-3">
         <li>
-          <NavLink href={"/"} className={" p-2"}>
+          <NavLink href={"/"} className={" p-2 rounded-sm"}>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink href={"/allbooks"} className={" p-2"}>
+          <NavLink href={"/allbooks"} className={" p-2 rounded-sm"}>
             All Book
           </NavLink>
         </li>
         <li>
-          <NavLink href={"/myprofile"} className={" p-2"}>
+          <NavLink href={"/myprofile"} className={" p-2 rounded-sm"}>
             My Profile
           </NavLink>
         </li>
       </ul>
-
-      {/* <div>
-        <ul>
-          <li>
-            <NavLink href={"/auth/register"} className={" p-2"}>
-              Register
-            </NavLink>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <NavLink href={"/auth/signup"} className={" p-2"}>
-              Signup
-            </NavLink>
-          </li>
-        </ul>
-      </div> */}
 
       {/* Login/Logout option */}
       {isPending ? (
