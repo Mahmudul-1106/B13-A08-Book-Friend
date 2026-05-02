@@ -30,7 +30,7 @@ const RegisterPage = () => {
         email: email, // required
         password: password, // required
         image: photo,
-        callbackURL: "/auth/login",
+        // callbackURL: "/auth/login",
       },
       {
         // This is the key setting to prevent automatic login
@@ -45,8 +45,11 @@ const RegisterPage = () => {
 
     if (res) {
       toast.success("Signup Successful");
-      // alert("Signup successful");
-      router.push("/auth/login");
+      // 2. Add a delay so the state settles and the user sees the toast
+      setTimeout(() => {
+        router.refresh(); // 3. Refresh to clear any "pending" auth states
+        router.push("/auth/login");
+      }, 1500);
     }
   };
 
@@ -129,7 +132,6 @@ const RegisterPage = () => {
           </button>
         </form>
       </div>
-      <Toaster />
     </div>
   );
 };
