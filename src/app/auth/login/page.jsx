@@ -48,7 +48,9 @@ const LoginPage = () => {
     console.log(res, error);
 
     if (error) {
-      alert(error.message);
+      toast.error(error.message, {
+        duration: 2000,
+      });
     }
 
     if (res) {

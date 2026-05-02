@@ -26,7 +26,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink href={"/allbooks"} className={" p-2 rounded-sm"}>
-            All Book
+            All Books
           </NavLink>
         </li>
         <li>
