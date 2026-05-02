@@ -64,6 +64,7 @@ const allBooksPage = async ({ searchParams }) => {
 
         {/* Books Display */}
         <main className="col-span-12 md:col-span-9 p-2  md:p-6 bg-slate-200 shadow-sm">
+          <SearchBar></SearchBar>
           <h2 className="text-2xl font-bold mb-6 text-center">
             {query
               ? `Search Results for "${query}"`
@@ -71,7 +72,7 @@ const allBooksPage = async ({ searchParams }) => {
                 ? `${category} Books`
                 : "All Books"}
           </h2>
-          <SearchBar></SearchBar>
+
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map((book) => (

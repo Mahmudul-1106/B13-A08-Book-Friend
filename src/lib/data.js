@@ -6,6 +6,14 @@ export async function getBooks() {
   return data;
 }
 
+export async function upcomingBooks() {
+  const res = await fetch(
+    "https://book-friend-server.onrender.com/upcoming"
+  );
+  const data = await res.json();
+  return data;
+}
+
 // export async function getNewsByCategoryId(category_id) {
 //   const res = await fetch(
 //     `https://openapi.programming-hero.com/api/news/category/${category_id}`,

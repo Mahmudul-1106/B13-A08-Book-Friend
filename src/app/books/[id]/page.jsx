@@ -15,6 +15,17 @@ const bookDetailsPage = async ({ params }) => {
 
   const { id } = await params;
   //   console.log("params Id", id);
+
+  if (id > 12) {
+    return (
+      <div>
+        <h2 className="mt-5 text-3xl font-bold py-20 text-center bg-green-100 text-primary">
+          Book Is Coming Soon...
+        </h2>
+      </div>
+    );
+  }
+
   const bookInfo = await getBookDetailsById(id);
   //   console.log("bookDetails", bookInfo);
   const {
@@ -34,7 +45,7 @@ const bookDetailsPage = async ({ params }) => {
           alt="Book Image"
           width={600}
           height={300}
-          className="max-w-sm max-h-[500px] rounded-lg shadow-2xl"
+          className="mx-auto max-w-[250px] max-h-[350px] md:max-w-sm md:max-h-[500px] rounded-lg shadow-2xl"
         ></Image>
         <div>
           <h1 className="text-4xl font-bold">{title}</h1>
