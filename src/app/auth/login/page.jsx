@@ -1,12 +1,24 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const LoginPage = () => {
+  const searchParams = useSearchParams();
+  const error = searchParams.get("error");
+
+  useEffect(() => {
+    if (error === "login_required") {
+      toast.error("Please login first to access that page!", {
+        id: "login-toast", // Prevents double toasts
+      });
+    }
+  }, [error]);
+
   const googleSignIn = async () => {
     const data = await authClient.signIn.social({
       provider: "google",
