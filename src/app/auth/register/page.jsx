@@ -76,9 +76,9 @@ const RegisterPage = () => {
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Photo URL</legend>
             <input
-              type="text"
+              type="url"
               className="input"
-              placeholder="Type here photo url"
+              placeholder="Type here photo url: https://..."
               {...register("photo", {
                 required: "Photo URL field is required",
               })}

@@ -1,12 +1,35 @@
+"use client";
+import { useSpring, animated, useSprings } from "@react-spring/web";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import BookDetails from "./BookDetails";
 
 const bookCard = ({ book }) => {
+  // 1. Define the spring state
+  const [props, set] = useSpring(() => ({
+    scale: 1,
+    shadow: "0px 5px 15px rgba(0,0,0,0.1)",
+    config: { tension: 300, friction: 10 }, // Bouncy config
+  }));
+
   console.log(book);
   return (
-    <div className="card mx-auto bg-base-100 shadow-sm w-full">
+    <animated.div
+      // 2. Apply the animated props to the style
+      style={{
+        transform: props.scale.to((s) => `scale(${s})`),
+        boxShadow: props.shadow,
+      }}
+      // 3. Trigger changes on hover
+      onMouseEnter={() =>
+        set({ scale: 1.05, shadow: "0px 15px 30px rgba(0,0,0,0.2)" })
+      }
+      onMouseLeave={() =>
+        set({ scale: 1, shadow: "0px 5px 15px rgba(0,0,0,0.1)" })
+      }
+      className="card mx-auto bg-base-100 shadow-sm w-full"
+    >
       <figure className="flex items-center justify-center px-0 pt-5 w-[250px] h-[300px] mx-auto">
         <Image
           src={book.image_url}
@@ -25,7 +48,7 @@ const bookCard = ({ book }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </animated.div>
   );
 };
 

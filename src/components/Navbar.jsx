@@ -6,6 +6,7 @@ import userAvatar from "@/assets/user.png";
 import Link from "next/link";
 import Image from "next/image";
 import { authClient } from "@/lib/auth-client";
+import SafeImage from "./SafeImage";
 
 const Navbar = () => {
   const { data: session, isPending } = authClient.useSession();
@@ -41,13 +42,24 @@ const Navbar = () => {
         ) : user ? (
           <div className="flex items-center gap-2">
             <h2>Hello, {user.name}</h2>
-            <Image
+            {/* <Image
               src={user.image || userAvatar}
               alt="User avatar"
-              width={30}
-              height={30}
-              className="rounded-md"
-            />
+              width={40}
+              height={40}
+              className="rounded-md w-[40px] h-[40px]"
+            /> */}
+            {session?.user?.image && (
+              <SafeImage
+                key={user.image}
+                src={user.image}
+                alt="Profile Image"
+                width={40}
+                height={40}
+                className="max-w-sm w-[40px] h-[40px] rounded-lg shadow-2xl object-cover"
+              ></SafeImage>
+            )}
+
             <button
               className="btn bg-purple-500 text-white"
               onClick={async () => await authClient.signOut()}

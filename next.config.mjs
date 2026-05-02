@@ -6,8 +6,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**",
-        port: "",
+        hostname: "**", // Allows all HTTPS images
+      },
+      {
+        protocol: "http",
+        hostname: "**", // Allows all HTTP images (like your 'http://uhbh' error)
       },
     ],
   },
