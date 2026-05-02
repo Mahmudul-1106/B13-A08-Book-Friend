@@ -14,10 +14,10 @@ export async function getBooks() {
 //   return data.data;
 // }
 
-// export async function getNewsDetailsById(news_id) {
-//   const res = await fetch(
-//     `https://openapi.programming-hero.com/api/news/${news_id}`,
-//   );
-//   const data = await res.json();
-//   return data.data[0];
-// }
+export async function getBookDetailsById(id) {
+  const res = await fetch(
+    `https://book-friend-server.onrender.com/books/${id}`,
+  );
+  const data = await res.json();
+  return data;
+}

@@ -22,9 +22,8 @@ const allBooksPage = async ({ searchParams }) => {
 
   return (
     <div className="container  mx-auto gap-6 mt-5 bg-slate-200 py-5 rounded-lg">
-      <SearchBar></SearchBar>
       <div className=" grid grid-cols-12   ">
-        <aside className="col-span-12 md:col-span-3 bg-white p-4  shadow-sm h-fit">
+        <aside className="mx-2 rounded-lg col-span-12 md:col-span-3 bg-white p-4  shadow-sm h-fit">
           <h2 className="text-xl font-bold mb-4 border-b pb-2">Categories</h2>
           <ul className="space-y-2">
             <li
@@ -72,7 +71,7 @@ const allBooksPage = async ({ searchParams }) => {
                 ? `${category} Books`
                 : "All Books"}
           </h2>
-
+          <SearchBar></SearchBar>
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map((book) => (

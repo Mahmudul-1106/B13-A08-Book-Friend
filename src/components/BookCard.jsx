@@ -18,7 +18,6 @@ const bookCard = ({ book }) => {
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{book.title}</h2>
-        <p>Author: {book.author}</p>
 
         <div className="card-actions">
           <Link href={`/books/${book.id}`}>
