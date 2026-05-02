@@ -12,12 +12,12 @@ const Navbar = () => {
   const user = session?.user;
   return (
     <div className="container px-2 mx-auto flex items-center flex-col  sm:flex-row justify-between gap-4 mt-6">
-      <div>
+      <div className="flex flex-1 ">
         <Link href={"/"}>
           <Image src={logo} alt="logo" width={50} height={50}></Image>
         </Link>
       </div>
-      <ul className="flex justify-between font-semibold items-center text-gray-700 gap-3">
+      <ul className="flex flex-1 justify-center font-semibold items-center text-gray-700 gap-3">
         <li>
           <NavLink href={"/"} className={" p-2 rounded-sm"}>
             Home
@@ -34,7 +34,7 @@ const Navbar = () => {
           </NavLink>
         </li>
       </ul>
-      <div>
+      <div className="flex flex-1 justify-end items-end">
         {/* Login/Logout option */}
         {isPending ? (
           <span className="loading loading-spinner loading-lg"></span>
