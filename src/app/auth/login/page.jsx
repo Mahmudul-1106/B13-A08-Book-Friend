@@ -15,6 +15,7 @@ const LoginPage = () => {
     if (error === "login_required") {
       toast.error("Please login first to access that page!", {
         id: "login-toast", // Prevents double toasts
+        duration: 2000,
       });
     }
   }, [error]);
@@ -149,7 +150,6 @@ const LoginPage = () => {
             </Link>
           </p>
         </div>
-        <Toaster />
       </div>
     </div>
   );

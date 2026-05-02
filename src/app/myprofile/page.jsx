@@ -47,7 +47,7 @@ const myProfilePage = async () => {
           className="max-w-sm h-[350px] rounded-lg shadow-2xl object-cover"
         />
 
-        <div>
+        <div className="px-2">
           <h1 className="text-3xl text-blue-900 font-bold">{user.name}</h1>
           <h1 className="text-xl text-blue-950 font-bold py-5">
             Email: {user.email}

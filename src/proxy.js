@@ -3,6 +3,14 @@ import { auth } from "./lib/auth";
 import { headers } from "next/headers";
 
 export async function proxy(request) {
+  // 1. Check if this is a Server Action request
+  const isServerAction = request.headers.get("next-action");
+  
+  // If it's an action, let it pass so the Action can handle the logic
+  if (isServerAction) {
+    return NextResponse.next();
+  }
+
   const session = await auth.api.getSession({
     headers: await headers(),
   });
@@ -10,10 +18,8 @@ export async function proxy(request) {
   if (session) {
     return NextResponse.next();
   } else {
-    // Add a query parameter like ?error=login_required
     const loginUrl = new URL("/auth/login", request.url);
     loginUrl.searchParams.set("error", "login_required");
-    
     return NextResponse.redirect(loginUrl);
   }
 }

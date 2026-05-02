@@ -4,23 +4,35 @@ import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { checkActiveSession } from "@/app/action/action";
 
-const BorrowButton = ({ isLoggedIn }) => {
+const BorrowButton = () => {
   const router = useRouter();
 
   const handleBorrow = async () => {
-    // Check if they are logged out right now
-    const stillActive = await checkActiveSession();
+    // 1. Clear any existing toasts immediately
+    toast.dismiss();
 
-    if (!isLoggedIn || !stillActive) {
-      toast.error("Please login first.");
+    try {
+      // 2. Only call the session check ONCE
+      const stillActive = await checkActiveSession();
 
-      setTimeout(() => {
-        router.push("/auth/login");
-      }, 1000);
-      return;
+      if (!stillActive) {
+        toast.error("Please login again!", {
+          id: "login-toast", // This ID strictly enforces only ONE toast
+          duration: 2000,
+        });
+
+        // 3. Navigate after a short delay
+        setTimeout(() => {
+          router.push("/auth/login");
+        }, 1000);
+        return;
+      }
+
+      toast.success("Borrowing successful!");
+    } catch (err) {
+      console.error("Borrowing Error:", err);
+      toast.error("Something went wrong.");
     }
-
-    toast.success("Borrowing successful!");
   };
 
   return (
