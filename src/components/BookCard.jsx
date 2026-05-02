@@ -6,8 +6,8 @@ import BookDetails from "./BookDetails";
 const bookCard = ({ book }) => {
   console.log(book);
   return (
-    <div className="card  bg-base-100 shadow-sm w-full">
-      <figure className="flex justify-center px-0 pt-5 w-[250px] h-[300px] mx-auto">
+    <div className="card mx-auto bg-base-100 shadow-sm w-full">
+      <figure className="flex items-center justify-center px-0 pt-5 w-[250px] h-[300px] mx-auto">
         <Image
           src={book.image_url}
           alt="Book"

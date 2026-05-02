@@ -34,32 +34,33 @@ const Navbar = () => {
           </NavLink>
         </li>
       </ul>
-
-      {/* Login/Logout option */}
-      {isPending ? (
-        <span className="loading loading-spinner loading-lg"></span>
-      ) : user ? (
-        <div className="flex items-center gap-2">
-          <h2>Hello, {user.name}</h2>
-          <Image
-            src={user.image || userAvatar}
-            alt="User avatar"
-            width={30}
-            height={30}
-            className="rounded-md"
-          />
-          <button
-            className="btn bg-purple-500 text-white"
-            onClick={async () => await authClient.signOut()}
-          >
-            Logout
+      <div>
+        {/* Login/Logout option */}
+        {isPending ? (
+          <span className="loading loading-spinner loading-lg"></span>
+        ) : user ? (
+          <div className="flex items-center gap-2">
+            <h2>Hello, {user.name}</h2>
+            <Image
+              src={user.image || userAvatar}
+              alt="User avatar"
+              width={30}
+              height={30}
+              className="rounded-md"
+            />
+            <button
+              className="btn bg-purple-500 text-white"
+              onClick={async () => await authClient.signOut()}
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
+          <button className="btn bg-purple-500 text-white">
+            <Link href={"/auth/login"}>Login</Link>
           </button>
-        </div>
-      ) : (
-        <button className="btn bg-purple-500 text-white">
-          <Link href={"/auth/login"}>Login</Link>
-        </button>
-      )}
+        )}
+      </div>
     </div>
   );
 };
