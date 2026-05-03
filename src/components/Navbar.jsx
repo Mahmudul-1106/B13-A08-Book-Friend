@@ -12,7 +12,7 @@ const Navbar = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
   return (
-    <div className="container px-2 mx-auto flex items-center flex-col  sm:flex-row justify-between gap-4 mt-6">
+    <div className=" bg-white px-2 sm:px-10 mx-auto flex items-center flex-col  sm:flex-row justify-between gap-4 py-5 fixed top-0 left-0 w-full z-50">
       <div className="flex flex-1 ">
         <Link href={"/"}>
           <Image src={logo} alt="logo" width={50} height={50}></Image>
