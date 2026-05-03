@@ -2,7 +2,7 @@
 Book-Friend is a community-driven full-stack web application designed for book enthusiasts. It allows users to explore a vast collection of books, manage their personal reading profiles, and participate in a digital book-borrowing system. The project focuses on creating a seamless, interactive experience for fostering a culture of sharing and learning.
 
 🚀 Live URL
-[Insert Your Vercel/Netlify Deployment Link Here]
+[https://book-friend-tawny.vercel.app/]
 
 🎯 Purpose
 The primary goal of this project is to provide a user-friendly platform where readers can discover new titles and manage their borrowing activities. Built as part of the Programming Hero Batch-13 (Neptune) curriculum, it demonstrates the implementation of secure authentication, server-side data management, and modern UI/UX principles.
