@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+📖 Book-Friend
+Book-Friend is a community-driven full-stack web application designed for book enthusiasts. It allows users to explore a vast collection of books, manage their personal reading profiles, and participate in a digital book-borrowing system. The project focuses on creating a seamless, interactive experience for fostering a culture of sharing and learning.
 
-## Getting Started
+🚀 Live URL
+[Insert Your Vercel/Netlify Deployment Link Here]
 
-First, run the development server:
+🎯 Purpose
+The primary goal of this project is to provide a user-friendly platform where readers can discover new titles and manage their borrowing activities. Built as part of the Programming Hero Batch-13 (Neptune) curriculum, it demonstrates the implementation of secure authentication, server-side data management, and modern UI/UX principles.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✨ Key Features
+Dynamic Library: Browse a categorized collection of books including Story, Tech, and Science.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Secure Authentication: User registration and login system powered by Better-Auth with protected routes.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Real-time Borrowing System: Check book availability and borrow titles with instant UI feedback.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Personalized Profiles: Users can update their display names and profile pictures.
 
-## Learn More
+Interactive UI: Smooth, physics-based animations and hover effects using react-spring.
 
-To learn more about Next.js, take a look at the following resources:
+Smart Loading & Error Handling: Custom skeleton loaders and animated 404 pages for a professional feel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Search Functionality: A responsive search bar to quickly find specific books.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🛠️ Tech Stack & NPM Packages
+This project is built using the Next.js framework with Turbopack for optimized development.
 
-## Deploy on Vercel
+Core Frameworks:
+Next.js: Full-stack React framework.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+React: UI library.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Tailwind CSS: Utility-first CSS framework.
+
+State & Logic:
+Better-Auth: Secure authentication handling.
+
+React Hook Form: Efficient form management and validation.
+
+UI & Animation:
+DaisyUI: Tailwind-based component library.
+
+React-Spring: Physics-based animation library.
+
+React-Hot-Toast: Elegant notification popups.
+
+React-Icons: Comprehensive icon library.
+
+Development Tools:
+Git/GitHub: Version control and repository management.
