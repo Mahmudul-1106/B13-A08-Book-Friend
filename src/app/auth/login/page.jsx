@@ -35,27 +35,50 @@ const LoginPage = () => {
 
   const [isShowPassword, setIsShowPassword] = useState(false);
 
-  const handleLoginFunc = async (data) => {
-    console.log(data, "data");
+  // const handleLoginFunc = async (data) => {
+  //   console.log(data, "data");
 
+  //   const { data: res, error } = await authClient.signIn.email({
+  //     email: data.email, // required
+  //     password: data.password, // required
+  //     rememberMe: true,
+  //     callbackURL: "/",
+  //   });
+
+  //   console.log(res, error);
+
+  //   if (error) {
+  //     toast.error(error.message, {
+  //       duration: 2000,
+  //     });
+  //   }
+
+  //   if (res) {
+  //     toast.success("Signin successful");
+  //     // alert("Signin successful");
+  //   }
+  // };
+
+  const handleLoginFunc = async (data) => {
     const { data: res, error } = await authClient.signIn.email({
-      email: data.email, // required
-      password: data.password, // required
+      email: data.email,
+      password: data.password,
       rememberMe: true,
+      // Change this to current URL or remove it to handle manually
       callbackURL: "/",
     });
 
-    console.log(res, error);
-
     if (error) {
-      toast.error(error.message, {
-        duration: 2000,
-      });
+      toast.error(error.message);
     }
 
     if (res) {
       toast.success("Signin successful");
-      // alert("Signin successful");
+
+      // Forces a refresh of the server-side auth state before moving
+      setTimeout(() => {
+        window.location.href = "/"; // Using window.location forces a clean reload
+      }, 1000);
     }
   };
 
