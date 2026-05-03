@@ -3,7 +3,6 @@ import { useSpring, animated, useSprings } from "@react-spring/web";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import BookDetails from "./BookDetails";
 
 const bookCard = ({ book }) => {
   // 1. Define the spring state
@@ -36,6 +35,7 @@ const bookCard = ({ book }) => {
           alt="Book"
           width={200}
           height={200}
+          unoptimized
           className="flex justify-center w-full h-full mx-auto"
         ></Image>
       </figure>

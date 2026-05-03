@@ -42,13 +42,7 @@ const Navbar = () => {
         ) : user ? (
           <div className="flex items-center gap-2">
             <h2>Hello, {user.name}</h2>
-            {/* <Image
-              src={user.image || userAvatar}
-              alt="User avatar"
-              width={40}
-              height={40}
-              className="rounded-md w-[40px] h-[40px]"
-            /> */}
+
             {session?.user?.image && (
               <SafeImage
                 key={user.image}

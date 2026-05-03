@@ -19,6 +19,7 @@ const SafeImage = ({ src, alt, width, height, className }) => {
       alt={alt}
       width={width}
       height={height}
+      unoptimized
       className={className}
       // If the URL is broken (like http://uhbh), this triggers:
       onError={() => setImgSrc(fallback)}

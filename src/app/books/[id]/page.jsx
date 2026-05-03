@@ -45,7 +45,8 @@ const bookDetailsPage = async ({ params }) => {
           alt="Book Image"
           width={600}
           height={300}
-          className="mx-auto max-w-[250px] max-h-[350px] md:max-w-sm md:max-h-[450px] rounded-lg shadow-2xl"
+          unoptimized
+          className="mx-auto max-w-[250px] max-h-[350px] md:max-w-72 md:max-h-[400px] rounded-lg shadow-2xl"
         ></Image>
         <div>
           <h1 className="text-4xl font-bold">{title}</h1>

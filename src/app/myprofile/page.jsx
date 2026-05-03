@@ -27,23 +27,13 @@ const myProfilePage = async () => {
         Welcome to BookFriend! Profile Information:
       </p>
       <div className=" flex items-center justify-center gap-10 flex-col lg:flex-row">
-        {/* <Image
-          src={
-            user.image ||
-            "https://cdn.prod.website-files.com/6600e1eab90de089c2d9c9cd/669726e7b6388b54f9aa2769_66553f0390479b8e5a3fc524_image_CMEex1C1_1716770910814_raw.jpeg"
-          }
-          alt="Profile Image"
-          width={300}
-          height={500}
-          className=" max-w-sm h-[350px] rounded-lg shadow-2xl"
-        /> */}
-
         {/* Use SafeImage instead of Image */}
         <SafeImage
           src={user.image}
           alt="Profile Image"
           width={300}
           height={500}
+          unoptimized
           className="max-w-sm h-[350px] rounded-lg shadow-2xl object-cover"
         />
 

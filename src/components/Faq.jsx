@@ -27,6 +27,7 @@ const Faq = () => {
               alt="Image"
               width={300}
               height={350}
+              unoptimized
               className="mx-auto max-w-[250px] max-h-[350px]  md:max-w-md md:max-h-[500px] rounded-lg shadow-2xl"
             ></Image>
           </animated.div>
