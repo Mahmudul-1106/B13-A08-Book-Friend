@@ -21,11 +21,11 @@ export default async function Home() {
        </Link>
 
        <div className="mt-5 flex justify-between gap-4 items-center bg-gray-200 py-4 px-2 container mx-auto">
-      <button className="btn bg-red-500 text-white">Latest Books</button>
+      <button className="btn bg-red-500 text-white">New Arrivals:</button>
       <Marquee pauseOnHover={true} speed={50}>
         {books.map((n) => (
           <span key={n._id} className="flex items-center">
-      <span className="mx-6">{n.title}</span>
+      <span className="mx-6">{n.title} | Special Discount on Memberships...</span> 
       <span className="text-red-500">●</span> 
     </span>
         ))}
