@@ -9,7 +9,19 @@ import Faq from "@/components/Faq";
 
 export default async function Home() {
   const books = await getBooks();
+
+
+  if (books.length === 0) {
+  return <p>No books available at the moment.</p>;
+}
+
   const comingBooks = await upcomingBooks();
+
+
+  if (comingBooks.length === 0) {
+  return <p>No books available at the moment.</p>;
+}
+
   console.log('comingBooks', comingBooks )
   const featuredBooks = books.slice(0, 4);
   // console.log('featuredBooks', featuredBooks)

@@ -28,6 +28,19 @@ const bookDetailsPage = async ({ params }) => {
 
   const bookInfo = await getBookDetailsById(id);
   //   console.log("bookDetails", bookInfo);
+
+  // If fetching failed or book doesn't exist, show a friendly message
+  if (!bookInfo) {
+    return (
+      <div className="py-20 text-center">
+        <h2 className="text-2xl font-bold text-red-500">
+          Book not found or server error.
+        </h2>
+        <p>Please try again later.</p>
+      </div>
+    );
+  }
+
   const {
     title,
     author,
